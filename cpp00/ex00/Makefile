@@ -3,7 +3,7 @@ SRC =  megaphone.cpp
 CC = c++
 RM = rm -rf
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
-OBJS = $(SRC.cpp=.o)
+OBJS = $(SRC:.cpp=.o)
 
 all  : $(NAME)
 

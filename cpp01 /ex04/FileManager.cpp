@@ -49,7 +49,7 @@ bool FileManager::replaceStrings()
     std::string line;
     std::string output;
 
-    std::ifstream inputFile(getFileName()); //ifstream, getFileName dosyasını açar ve inputFile onu kkullanır.
+    std::ifstream inputFile(getFileName()); //ifstream, getFileName dosyasını açar ve inputFile onu kullanır.
     if (!inputFile.is_open()) //is_open, inputFile'ın açık olup olmadığını kontrol eder.Bool ile çalışır. 
     {
         std::cout << "Could not open this file: " << getFileName() << std::endl;
@@ -71,7 +71,7 @@ bool FileManager::replaceStrings()
             if (i == std::string::npos) //getFromStr'nin line icinde bulunup bulunmadığını kontrol eder.
                 break;
             line.erase(i, getFromStr().length()); //getFromStr.length kadar karakteri siler.
-            line.insert(i, getToStr()); // getTostr yani istediğimiz sitringi i indexinde ekler.
+            line.insert(i, getToStr()); // getTostr yani istediğimiz stringi i indexinde ekler.
         }
         output.append(line); // output stringine line stringini ekler.
         if (!inputFile.eof()) //end of file :: dosya sonu.

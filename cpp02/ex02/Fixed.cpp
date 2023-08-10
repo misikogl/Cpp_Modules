@@ -88,7 +88,7 @@ bool Fixed::operator != (const Fixed &other) const
 
 Fixed Fixed::operator + (const Fixed &other) const
 {
-	return Fixed(this->toInt() + other.toInt());
+	return Fixed(this->toFloat() + other.toFloat());
 }
 
 Fixed Fixed::operator - (const Fixed &other) const

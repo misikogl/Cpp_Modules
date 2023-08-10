@@ -1,21 +1,43 @@
 #include <iostream>
 
-int main(int argc, char **argv)
+bool	is_alpha(char c)
 {
-    if (argc < 2)
-        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-    else
-    {
-        for (int i = 1; i < argc; i++)
-		{
-			std::string argv_i = argv[i];
-			for (size_t j = 0; j < strlen(argv[i]); j++)
-			{
-				argv_i[j] = toupper(argv_i[j]);
-                std::cout << argv_i[j];
+	if ('a' <= c && c <= 'z')
+		return (true);
+	if ('A' <= c && c <= 'Z')
+		return (true);
+	return (false);
+}
+
+bool	is_lower(char c)
+{
+	if ('a' <= c && c <= 'z')
+		return (true);
+	return (false);
+}
+
+char	to_upper(char c)
+{
+	if (is_alpha(c))
+	{
+		if (is_lower(c))
+			return(c - 'a' + 'A');
+	}
+	return (c);
+}
+
+int		main(int argc, char **argv)
+{
+	if (argc < 2) {
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
+	}
+	else {
+		for (int i = 1; i < argc; i++) {
+			for (int j = 0; argv[i][j]; j++) {
+				std::cout << to_upper(argv[i][j]);
 			}
-        }
+		}
 		std::cout << std::endl;
-    }
-    return 0;
+	}
+	return (0);
 }
